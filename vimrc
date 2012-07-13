@@ -32,19 +32,14 @@ set background=dark
 let xterm16_colormap = 'soft'
 let xterm16_brightness = 'high'
 color xterm16
-" color charged-256
-
-"color kiwiv2
-"au FileType php             color kiwiv2
-"color crt5
 
 " this will search for a tags file in the current directory, then keep going
 " up one level until it finds it or reaches /
 " create tags by running this command from the top level
 " project directory: ctags-exuberant -R * 
-set tags=tags;
-set tags+=$HOME/.vim/tags/python.ctags
-
+" set tags=tags;
+" set tags+=$HOME/.vim/tags/python.ctags
+ 
 " shows line numbers
 " toggle it with 2 ctrl+n's
 " imap <C-N><C-N> :set invnumber <CR> 
@@ -52,12 +47,7 @@ set tags+=$HOME/.vim/tags/python.ctags
 " toggles showing hidden characters
 " F4
 
-" set tab to 4 spaces, no softtabs
-" set smarttab
-" set tabstop=4
-" set shiftwidth=4
-" set noexpandtab
-
+" set tab to 4 spaces, softtabs
 set smarttab
 set tabstop=4
 set shiftwidth=4
