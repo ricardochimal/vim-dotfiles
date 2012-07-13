@@ -42,19 +42,9 @@ let xterm16_colormap = 'soft'
 let xterm16_brightness = 'high'
 color xterm16
 
-" this will search for a tags file in the current directory, then keep going
-" up one level until it finds it or reaches /
-" create tags by running this command from the top level
-" project directory: ctags-exuberant -R * 
-" set tags=tags;
-" set tags+=$HOME/.vim/tags/python.ctags
- 
 " shows line numbers
 " toggle it with 2 ctrl+n's
 " imap <C-N><C-N> :set invnumber <CR> 
-
-" toggles showing hidden characters
-" F4
 
 " set tab to 4 spaces, softtabs
 set smarttab
@@ -116,17 +106,9 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
-" CTRL+Space will activate code completion
-" inoremap <Nul> <C-x><C-o>
 
 " makes vim change to whatever directory the most recent file is located in
 autocmd BufEnter * lcd %:p:h
-
-" CTRL+TAB open a new tab w/ the file browser
-" CTRL+LEFT or CTRL+RIGHT navigates between tabs
-map <C-t> :tabe .<CR>
-map <C-left> :tabp<CR>
-map <C-right> :tabn<CR>
 
 " python << EOF
 " import sys
