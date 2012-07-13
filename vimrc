@@ -1,5 +1,8 @@
+set encoding=utf-8
+
 " vim settings, not vi
 set nocompatible
+
 
 " load pathogen
 call pathogen#infect()
@@ -16,6 +19,12 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 
 " unfold all code
 set foldlevelstart=2
+
+" always show the statusline
+set laststatus=2
+" Powerline status line
+" how to configure docs: bundle/vim-powerline/doc/Powerline.txt
+let g:Powerline_symbols = 'unicode'
 
 " set the font for gui mode
 set gfn=Andale\ Mono\ 11
