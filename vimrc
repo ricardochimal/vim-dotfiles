@@ -103,6 +103,9 @@ noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>/
 
 
 " code completion support
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 " CTRL+Space will activate code completion
 inoremap <Nul> <C-x><C-o>
