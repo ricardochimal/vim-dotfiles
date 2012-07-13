@@ -15,7 +15,7 @@ set history=50
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
 " unfold all code
-set foldlevelstart=1
+set foldlevelstart=2
 
 " set the font for gui mode
 set gfn=Andale\ Mono\ 11
