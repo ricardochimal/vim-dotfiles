@@ -108,7 +108,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 " CTRL+Space will activate code completion
-inoremap <Nul> <C-x><C-o>
+" inoremap <Nul> <C-x><C-o>
 
 " makes vim change to whatever directory the most recent file is located in
 autocmd BufEnter * lcd %:p:h
@@ -119,19 +119,19 @@ map <C-t> :tabe .<CR>
 map <C-left> :tabp<CR>
 map <C-right> :tabn<CR>
 
-python << EOF
-import sys
-import os
-import vim
-for p in sys.path:
-	if os.path.isdir(p):
-		vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-EOF
+" python << EOF
+" import sys
+" import os
+" import vim
+" for p in sys.path:
+" 	if os.path.isdir(p):
+" 		vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+" EOF
 
 
 " python specific highlighting options
-let python_highlight_all = 1
+" let python_highlight_all = 1
 
 " erlang soft tab
-au FileType erlang
-	\ setlocal expandtab
+" au FileType erlang
+" 	\ setlocal expandtab
