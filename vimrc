@@ -1,6 +1,9 @@
 " vim settings, not vi
 set nocompatible
 
+" load pathogen
+call pathogen#infect()
+
 " some standard stuff
 set autoindent
 set smartindent
