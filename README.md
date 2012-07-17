@@ -9,6 +9,12 @@ $ brew install python --framework
 $ brew install ./homebrew/vim.rb
 ```
 
+## Debian setup
+
+```bash
+$ sudo apt-get install vim-gtk python2.7
+```
+
 ## Installation
 
 ```bash
