@@ -3,15 +3,16 @@ set encoding=utf-8
 " vim settings, not vi
 set nocompatible
 
-
 " load pathogen
 call pathogen#infect()
 
 " some standard stuff
 set autoindent
 set smartindent
-filetype plugin on
 syntax on
+filetype on
+filetype plugin on
+filetype indent on
 set ruler
 set backspace=indent,eol,start
 set history=50
@@ -44,7 +45,7 @@ color xterm16
 
 " shows line numbers
 " toggle it with 2 ctrl+n's
-" imap <C-N><C-N> :set invnumber <CR> 
+nmap <C-N><C-N> :set invnumber<CR>
 
 " set tab to 4 spaces, softtabs
 set smarttab
@@ -102,9 +103,11 @@ noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>/
 
 
 " code completion support
+let g:SuperTabDefaultCompletionType = "context"
+
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " makes vim change to whatever directory the most recent file is located in
