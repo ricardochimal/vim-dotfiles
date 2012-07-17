@@ -11,7 +11,10 @@ $ brew install ./homebrew/vim.rb
 
 ## Installation
 
-```
+```bash
 $ git clone git@github.com:ricardochimal/vim-dotfiles.git .vim
 $ ln -s .vim/vimrc .vimrc
+$ cd .vim; git submodule init; git submodule update
 ```
+
+
