@@ -39,8 +39,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 set background=dark
 
 " xterm16 specific options
-let xterm16_colormap = 'soft'
-let xterm16_brightness = 'high'
+let g:xterm16_colormap = 'soft'
+let g:xterm16_brightness = 'high'
 color xterm16
 
 " shows line numbers
@@ -56,6 +56,8 @@ set smartindent
 
 au FileType ruby set tabstop=2 shiftwidth=2
 
+" syntax highlight ruby operators &&, ||, etc
+let ruby_operators=1
 
 " set backup options, i don't like backup files cluttering my directories.. so
 " i set some global backup directory for this purpose
@@ -107,6 +109,7 @@ let g:SuperTabDefaultCompletionType = "context"
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
