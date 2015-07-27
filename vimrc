@@ -23,9 +23,12 @@ set foldlevelstart=2
 
 " always show the statusline
 set laststatus=2
-" Powerline status line
-" how to configure docs: bundle/vim-powerline/doc/Powerline.txt
-let g:Powerline_symbols = 'unicode'
+
+" Powerline Init
+"
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 " set the font for gui mode
 set gfn=Andale\ Mono\ 11
@@ -54,7 +57,9 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
+" FileType specific settings
 au FileType ruby set tabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
 " syntax highlight ruby operators &&, ||, etc
 let ruby_operators=1
@@ -95,17 +100,13 @@ map! <F2> <ESC><F2>
 " ,c will comment the block
 " ,u will uncomment the block
 let b:comment_leader = '# '
-au FileType haskell,vhdl,ada            let b:comment_leader = '-- '
-au FileType vim                         let b:comment_leader = '" '
-au FileType c,cpp,java,php,js           let b:comment_leader = '// '
-au FileType sh,make,perl,ruby,python    let b:comment_leader = '# '
-au FileType tex                         let b:comment_leader = '% '
+au FileType haskell,vhdl,ada                let b:comment_leader = '-- '
+au FileType vim                             let b:comment_leader = '" '
+au FileType c,cpp,java,php,js,go            let b:comment_leader = '// '
+au FileType sh,make,perl,eruby,ruby,python  let b:comment_leader = '# '
+au FileType tex                             let b:comment_leader = '% '
 noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
 noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
-
-
-" code completion support
-let g:SuperTabDefaultCompletionType = "context"
 
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
@@ -116,19 +117,14 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 " makes vim change to whatever directory the most recent file is located in
 autocmd BufEnter * lcd %:p:h
 
-" python << EOF
-" import sys
-" import os
-" import vim
-" for p in sys.path:
-" 	if os.path.isdir(p):
-" 		vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
-" EOF
+" vim-go configuration
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 
+au FileType go nmap ,d <Plug>(go-def-split)
 
-" python specific highlighting options
-" let python_highlight_all = 1
-
-" erlang soft tab
-" au FileType erlang
-" 	\ setlocal expandtab
+au FileType go nmap ,b <Plug>(go-build)
+au FileType go nmap ,t <Plug>(go-test)
