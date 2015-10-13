@@ -102,7 +102,7 @@ map! <F2> <ESC><F2>
 let b:comment_leader = '# '
 au FileType haskell,vhdl,ada                let b:comment_leader = '-- '
 au FileType vim                             let b:comment_leader = '" '
-au FileType c,cpp,java,php,js,go            let b:comment_leader = '// '
+au FileType c,cpp,java,php,javascript,go    let b:comment_leader = '// '
 au FileType sh,make,perl,eruby,ruby,python  let b:comment_leader = '# '
 au FileType tex                             let b:comment_leader = '% '
 noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
@@ -113,6 +113,8 @@ autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " makes vim change to whatever directory the most recent file is located in
 autocmd BufEnter * lcd %:p:h
