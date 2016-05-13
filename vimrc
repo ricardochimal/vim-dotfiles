@@ -117,7 +117,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " makes vim change to whatever directory the most recent file is located in
-autocmd BufEnter * lcd %:p:h
+" autocmd BufEnter * lcd %:p:h
 
 " vim-go configuration
 let g:go_highlight_functions = 1
