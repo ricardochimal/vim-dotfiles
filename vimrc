@@ -74,8 +74,8 @@ inoremap {<cr> {<cr>}<esc>O
 
 " F9 toggles paste mode which is nice for pasting stuff
 " that is already indented
-map <F9> <nop>
-set pastetoggle=<F9>
+" map <F9> <nop>
+" set pastetoggle=<F9>
 
 " indent blocks of code between { } without indenting the { }
 " shift+F1, shift+F2
