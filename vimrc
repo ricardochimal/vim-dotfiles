@@ -19,24 +19,22 @@ set history=50
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
 " unfold all code
-set foldlevelstart=2
+" set foldlevelstart=2
 
 " always show the statusline
 set laststatus=2
 
-" Powerline Init
-"
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+" Powerline setup
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
+" Always show statusline
+set laststatus=2
+
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
 
 " set the font for gui mode
 set gfn=Andale\ Mono\ 11
-
-" will save your last position in a file so next time you open it, you'll
-" come back to the same place
-set viminfo='10,\"100,:20,%,n~/.viminfo 
-au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " sets default color theme
 set background=dark
@@ -49,6 +47,8 @@ color xterm16
 " shows line numbers
 " toggle it with 2 ctrl+n's
 nmap <C-N><C-N> :set invnumber<CR>
+" show line numbers by default
+set number
 
 " set tab to 4 spaces, softtabs
 set smarttab
@@ -108,10 +108,10 @@ au FileType tex                             let b:comment_leader = '% '
 noremap <silent> ,c :<C-B>sil <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:noh<CR>
 noremap <silent> ,u :<C-B>sil <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:noh<CR>
 
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+" autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
@@ -125,8 +125,17 @@ let g:go_highlight_methods = 1
 let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
+" let g:go_metalinter_autosave = 1
 
 au FileType go nmap ,d <Plug>(go-def-split)
 
 au FileType go nmap ,b <Plug>(go-build)
 au FileType go nmap ,t <Plug>(go-test)
+
+" vim-lastplace config
+let g:lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
+
+let g:go_fmt_command = "goimports"
+
+" disable the preview window
+set completeopt-=preview

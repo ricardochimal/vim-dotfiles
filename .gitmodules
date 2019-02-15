@@ -28,3 +28,9 @@
 [submodule "bundle/vim-js-indent"]
 	path = bundle/vim-js-indent
 	url = https://github.com/gavocanov/vim-js-indent.git
+[submodule "bundle/vim-lastplace"]
+	path = bundle/vim-lastplace
+	url = git://github.com/dietsche/vim-lastplace.git
+[submodule "bundle/vim-protobuf"]
+	path = bundle/vim-protobuf
+	url = git://github.com/uarun/vim-protobuf.git
