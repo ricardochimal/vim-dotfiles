@@ -25,7 +25,7 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set laststatus=2
 
 " Powerline setup
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+set rtp+=$HOME/.local/lib/python3.6/site-packages/powerline/bindings/vim/
 
 " Always show statusline
 set laststatus=2
