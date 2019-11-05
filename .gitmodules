@@ -31,3 +31,6 @@
 [submodule "bundle/vim-protobuf"]
 	path = bundle/vim-protobuf
 	url = git://github.com/uarun/vim-protobuf.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/ycm-core/YouCompleteMe
