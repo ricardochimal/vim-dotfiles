@@ -19,7 +19,7 @@ set history=50
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 
 " unfold all code
-" set foldlevelstart=2
+set foldlevelstart=2
 
 " always show the statusline
 set laststatus=2
@@ -49,6 +49,8 @@ color xterm16
 nmap <C-N><C-N> :set invnumber<CR>
 " show line numbers by default
 set number
+
+map <C-M><C-M> :NERDTreeToggle<CR>
 
 " set tab to 4 spaces, softtabs
 set smarttab
@@ -139,3 +141,14 @@ let g:go_fmt_command = "goimports"
 
 " disable the preview window
 set completeopt-=preview
+
+" virtualenv support
+" py3 << EOF
+" import os
+" import sys
+" if 'VIRTUAL_ENV' in os.environ:
+"     project_base_dir = os.environ['VIRTUAL_ENV']
+"     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"     execfile(activate_this, dict(__file__=activate_this))
+"     exec
+" EOF
