@@ -1,13 +1,15 @@
 ## Debian setup
 
 ```bash
-$ sudo apt-get install vim-gtk python2.7-dev
+$ sudo apt-get install vim-nox python3.8-dev
 ```
 
 ## Requirements
 
 * Recent vim
 * [Powerline](https://powerline.readthedocs.org/en/latest/installation.html)
+    * add `~/.local/bin` to path in `.bashrc`
+    * `pip3 install powerline-status`
 
 ## Installation
 
